@@ -21,7 +21,7 @@ document.addEventListener('DOMContentLoaded', () => {
     
     // MQTT接続設定
     const mqttConfig = {
-        broker: "broker.emqx.io",
+        broker: "wss://broker.emqx.io",
         port: 8084, // WebSocketsポート（WebブラウザではWSS/WSのみ使用可能）
         topic: "net.syamoji/bingo/card2"
     };
