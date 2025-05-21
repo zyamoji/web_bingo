@@ -8,7 +8,7 @@ class MQTTClient {
      * @param {number} port - MQTTブローカーのポート番号
      * @param {string} topic - 購読するトピック名
      */
-    constructor(broker = "broker.emqx.io", port = 8883, topic = "net.syamoji/bingo/card2") {
+    constructor(broker = "broker.emqx.io", port = 8083, topic = "net.syamoji/bingo/card2") {
         this.broker = broker;
         this.port = port;
         this.topic = topic;
@@ -65,7 +65,7 @@ class MQTTClient {
                         console.error("MQTT 接続に失敗しました:", err);
                         reject(err);
                     },
-                    useSSL: this.port === 8883, // SSLポートの場合
+                    useSSL: this.port === 8083, // SSLポートの場合
                     timeout: 3,
                 };
 
