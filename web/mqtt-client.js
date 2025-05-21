@@ -8,7 +8,7 @@ class MQTTClient {
      * @param {number} port - MQTTブローカーのポート番号
      * @param {string} topic - 購読するトピック名
      */
-    constructor(broker = "broker.emqx.io", port = 8083, topic = "net.syamoji/bingo/card2") {
+    constructor(broker = "broker.emqx.io", port = 8084, topic = "net.syamoji/bingo/card2") {
         this.broker = broker;
         this.port = port;
         this.topic = topic;
