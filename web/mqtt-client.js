@@ -65,7 +65,7 @@ class MQTTClient {
                         console.error("MQTT 接続に失敗しました:", err);
                         reject(err);
                     },
-                    useSSL: this.port === 8083, // SSLポートの場合
+                    useSSL: this.port === 8883, // SSLポートの場合
                     timeout: 3,
                 };
 
