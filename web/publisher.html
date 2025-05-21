@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ビンゴ番号発行</title>
+    <link rel="stylesheet" href="publisher-style.css">
+    <!-- MQTT over WebSockets クライアントライブラリ -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/paho-mqtt/1.0.1/mqttws31.min.js" type="text/javascript"></script>
+</head>
+<body>
+    <div class="container">
+        <h1>ビンゴ番号発行</h1>
+        
+        <div class="number-display">
+            <div id="current-number" class="current-number">--</div>
+            <div class="number-info">
+                <span id="pick-count">0</span> / <span id="total-numbers">75</span> 個
+            </div>
+        </div>
+        
+        <div class="controls">
+            <button id="pick-number-btn" class="main-btn">番号を引く</button>
+            <button id="reset-btn">リセット</button>
+        </div>
+        
+        <div class="history-container">
+            <h2>選ばれた番号</h2>
+            <div id="number-history" class="number-history"></div>
+        </div>
+        
+        <div id="status-message" class="status-message">接続しています...</div>
+    </div>
+
+    <script src="bingo-logic.js"></script>
+    <script src="mqtt-client.js"></script>
+    <script src="publisher.js"></script>
+</body>
+</html>

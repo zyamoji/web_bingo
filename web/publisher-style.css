@@ -1,0 +1,143 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Arial', sans-serif;
+}
+
+body {
+    background-color: #f0f0f0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 20px;
+}
+
+.container {
+    max-width: 800px;
+    width: 100%;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+h1 {
+    text-align: center;
+    color: #333;
+}
+
+h2 {
+    color: #555;
+    margin-bottom: 10px;
+    font-size: 18px;
+}
+
+.number-display {
+    text-align: center;
+    padding: 20px;
+    background-color: #f8f8f8;
+    border-radius: 10px;
+}
+
+.current-number {
+    font-size: 120px;
+    font-weight: bold;
+    line-height: 1.2;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.number-info {
+    font-size: 18px;
+    color: #666;
+}
+
+.controls {
+    display: flex;
+    gap: 15px;
+    justify-content: center;
+}
+
+button {
+    padding: 12px 20px;
+    border: none;
+    border-radius: 5px;
+    background-color: #e0e0e0;
+    color: #333;
+    font-size: 16px;
+    cursor: pointer;
+    transition: all 0.2s;
+    min-width: 120px;
+}
+
+button:hover {
+    background-color: #d0d0d0;
+}
+
+button:active {
+    transform: scale(0.98);
+}
+
+.main-btn {
+    background-color: #4a6fff;
+    color: white;
+    font-weight: bold;
+    padding: 15px 30px;
+    font-size: 18px;
+}
+
+.main-btn:hover {
+    background-color: #3a5fee;
+}
+
+.main-btn:active {
+    background-color: #2a4edd;
+}
+
+.history-container {
+    padding: 20px;
+    background-color: #f8f8f8;
+    border-radius: 10px;
+}
+
+.number-history {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-top: 10px;
+}
+
+.history-number {
+    display: inline-block;
+    width: 40px;
+    height: 40px;
+    line-height: 40px;
+    text-align: center;
+    background-color: #4a6fff;
+    color: white;
+    border-radius: 50%;
+    font-weight: bold;
+}
+
+.status-message {
+    text-align: center;
+    font-size: 14px;
+    color: #888;
+    padding: 10px;
+}
+
+/* 番号が選ばれた時のアニメーション */
+@keyframes number-pop {
+    0% { transform: scale(0.5); opacity: 0; }
+    50% { transform: scale(1.2); }
+    100% { transform: scale(1); opacity: 1; }
+}
+
+.number-pop {
+    animation: number-pop 0.5s ease-out;
+}

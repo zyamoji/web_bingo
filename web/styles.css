@@ -1,0 +1,146 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Arial', sans-serif;
+}
+
+body {
+    background-color: #f0f0f0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 20px;
+}
+
+.container {
+    max-width: 500px;
+    width: 100%;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.info-area {
+    text-align: center;
+    padding: 10px;
+    background-color: #f8f8f8;
+    border-radius: 8px;
+}
+
+.last-number {
+    font-size: 48px;
+    font-weight: bold;
+    margin-bottom: 10px;
+    color: #333;
+}
+
+.recent-numbers {
+    font-size: 18px;
+    color: #666;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 8px;
+}
+
+.recent-number {
+    display: inline-block;
+    width: 30px;
+    height: 30px;
+    line-height: 30px;
+    text-align: center;
+    background-color: #eee;
+    border-radius: 50%;
+}
+
+.status-message {
+    margin-top: 10px;
+    font-size: 14px;
+    color: #888;
+}
+
+.bingo-card {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    grid-template-rows: repeat(5, 1fr);
+    gap: 8px;
+    padding: 10px;
+    background-color: #333;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.bingo-cell {
+    aspect-ratio: 1;
+    background-color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 24px;
+    font-weight: bold;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    color: #333;
+    user-select: none;
+}
+
+.bingo-cell.free {
+    background-color: #ffd700;
+}
+
+.bingo-cell.marked {
+    background-color: #ff6b6b;
+    color: white;
+}
+
+.bingo-cell:hover {
+    transform: scale(1.05);
+}
+
+.bingo-cell:active {
+    transform: scale(0.95);
+}
+
+.buttons {
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+}
+
+button {
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    background-color: #4a6fff;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.2s;
+    flex: 1;
+}
+
+button:hover {
+    background-color: #3a5fee;
+}
+
+button:active {
+    background-color: #2a4edd;
+}
+
+/* ビンゴ達成時のアニメーション */
+@keyframes bingo-highlight {
+    0% { background-color: #ff6b6b; }
+    50% { background-color: #ffd700; }
+    100% { background-color: #ff6b6b; }
+}
+
+.bingo-highlight {
+    animation: bingo-highlight 1s infinite;
+}

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Web ビンゴ</title>
+    <link rel="stylesheet" href="styles.css">
+    <!-- MQTT over WebSockets クライアントライブラリ -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/paho-mqtt/1.0.1/mqttws31.min.js" type="text/javascript"></script>
+</head>
+<body>
+    <div class="container">
+        <div class="info-area">
+            <div id="last-number" class="last-number">-- 準備中 --</div>
+            <div id="recent-numbers" class="recent-numbers"></div>
+            <div id="status-message" class="status-message">接続しています...</div>
+        </div>
+        
+        <div class="bingo-card">
+            <!-- ビンゴカードはJSで動的に生成 -->
+        </div>
+        
+        <div class="buttons">
+            <button id="new-card-btn">新しいカード</button>
+            <button id="disconnect-btn">切断</button>
+        </div>
+    </div>
+
+    <script src="bingo-logic.js"></script>
+    <script src="mqtt-client.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>
